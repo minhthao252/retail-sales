@@ -8,6 +8,10 @@ CREATE TABLE retail_sales
     reason_for_null  VARCHAR(255),
     sales            DECIMAL
 );
+LOAD DATA INFILE 'C:\Users\mthao\Documents\data\github\retail_orders\us_retail_sales.csv'
+INTO TABLE retail_sales
+FIELDS TERMINATED BY ','
+    IGNORE 1 LINES;
 ###TRENDING THE DATA
 ##Simple Trend
 SELECT sales_month, retail_sales.sales
